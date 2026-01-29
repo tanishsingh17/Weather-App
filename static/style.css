@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    text-align: center;
+}
+
+.container {
+    background: white;
+    width: 380px;
+    padding: 25px;
+    margin: 80px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+select {
+    padding: 10px;
+    width: 95%;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    width: 98%;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.weather-box {
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}

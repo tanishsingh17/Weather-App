@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🌍 Weather App</h1>
+
+    <form method="POST">
+
+        <select name="country" id="country" onchange="updateCities()" required>
+            <option value="">Select Country</option>
+            <option value="IN">India</option>
+            <option value="US">United States</option>
+            <option value="GB">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+        </select>
+
+        <select name="city" id="city" required>
+            <option value="">Select City</option>
+        </select>
+
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather %}
+        {% if weather.error %}
+            <p class="error">{{ weather.error }}</p>
+        {% else %}
+            <div class="weather-box">
+                <h2>{{ weather.city }}, {{ weather.country }}</h2>
+
+                <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+
+                <p>🌡 Temperature: {{ weather.temp }}°C</p>
+                <p>🤗 Feels Like: {{ weather.feels_like }}°C</p>
+                <p>💧 Humidity: {{ weather.humidity }}%</p>
+                <p>💨 Wind Speed: {{ weather.wind }} m/s</p>
+                <p>🌥 Condition: {{ weather.description }}</p>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+<script>
+    const citiesData = JSON.parse('{{ cities_data | tojson | safe }}');
+
+    function updateCities() {
+        const country = document.getElementById("country").value;
+        const citySelect = document.getElementById("city");
+
+        citySelect.innerHTML = '<option value="">Select City</option>';
+
+        if (citiesData[country]) {
+            citiesData[country].forEach(city => {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

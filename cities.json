@@ -1,0 +1,7 @@
+{
+  "IN": ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Kolkata", "Pune", "Bhopal", "Indore", "Jaipur", "Lucknow", "Patna", "Ahmedabad", "Surat"],
+  "US": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "San Diego", "Dallas", "San Jose", "Austin"],
+  "GB": ["London", "Manchester", "Birmingham", "Liverpool"],
+  "CA": ["Toronto", "Vancouver", "Montreal"],
+  "AU": ["Sydney", "Melbourne", "Brisbane"]
+}
