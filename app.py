@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
-API_KEY = "8eb15a1ae15a5a52ff66bfa0b6fed138"
+API_KEY = "xyz"
 
 with open("cities.json", "r") as f:
     cities_data = json.load(f)
